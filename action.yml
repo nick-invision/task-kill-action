@@ -1,0 +1,14 @@
+name: Task Kill
+description: "Kills specified tasks during pre, main, and post action execution"
+inputs:
+  pre_tasks:
+    description: "Comma-separated list of task names to kill before workflow begins"
+  main_tasks:
+    description: "Comma-separated list of task names to kill when action is called"
+  post_tasks:
+    description: "Comma-separated list of task names to kill after workflow ends"
+runs:
+  using: "node12"
+  pre: "src/pre.js"
+  main: "src/main.js"
+  post: "src/post.js"
